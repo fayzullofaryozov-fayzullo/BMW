@@ -1,0 +1,424 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background: #050505;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #168cff;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: #168cff;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    height: 650px;
+    background:
+    linear-gradient(90deg, rgba(0,0,0,.85), transparent),
+    url("https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1600")
+    center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.hero-content p {
+    color: #ddd;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.main-btn {
+    display: inline-block;
+    background: #087bdc;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.main-btn:hover {
+    background: #0055a5;
+    transform: translateY(-3px);
+}
+
+.carousel-section,
+.models,
+.configurator,
+.contact {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: calc(33.333% - 14px);
+    background: #171717;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.carousel-item h3 {
+    padding: 15px;
+}
+
+.arrow {
+    background: #087bdc;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.model-card {
+    background: #171717;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.model-card:hover {
+    transform: translateY(-8px);
+}
+
+.model-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.model-card h3 {
+    margin: 18px;
+}
+
+.model-card p {
+    color: #168cff;
+    font-size: 20px;
+}
+
+.model-card button {
+    margin: 15px;
+    padding: 12px 25px;
+    background: #087bdc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.config-card {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background: #171717;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.config-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.config-info {
+    padding: 35px;
+}
+
+.config-info h3 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.config-info p {
+    margin: 20px 0;
+}
+
+.colors {
+    display: flex;
+    gap: 12px;
+}
+
+.color {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #888;
+}
+
+.black { background: black; }
+.white { background: white; }
+.blue { background: #087bdc; }
+.red { background: red; }
+.grey { background: grey; }
+
+.color:hover {
+    outline: 3px solid #168cff;
+}
+
+.contact {
+    background: #111;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #050505;
+    color: #888;
+}
+
+footer h2 {
+    color: #168cff;
+    margin-bottom: 15px;
+}
+
+@media(max-width: 850px) {
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: #080808;
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .model-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-item {
+        min-width: 48%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+}
+
+@media(max-width: 550px) {
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .config-card {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-item {
+        min-width: 100%;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+
+
+
+.carousel-section {
+    padding: 70px 5%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform .6s ease;
+}
+
+.carousel-item {
+    flex: 0 0 calc(33.333% - 14px);
+    background: #171717;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.carousel-item h3 {
+    padding: 18px;
+    color: white;
+}
+
+.arrow {
+    flex-shrink: 0;
+    background: #087bdc;
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media(max-width: 850px) {
+    .carousel-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media(max-width: 550px) {
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    transform: none !important;
+    transition: none !important;
+}
+
+.carousel-item {
+    width: 100%;
+    min-width: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+@media(max-width: 850px) {
+    .carousel-track {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+    .carousel-track {
+        grid-template-columns: 1fr;
+    }
+}
